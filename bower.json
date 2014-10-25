@@ -1,0 +1,19 @@
+{
+  "name": "sigmag",
+  "version": "0.1.0",
+  "authors": [
+    "Daijiro Wachi <daijiro.wachi@gmail.com>"
+  ],
+  "main": ["sigmag.js", "sigmag.css"],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "~2.1.1"
+  }
+}
