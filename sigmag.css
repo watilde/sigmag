@@ -1,0 +1,51 @@
+.sigma {
+  font-family: Arial;
+  position :relative;
+  font-size: 40px;
+}
+.sigma__upper-bound {
+  font-size: 15px;
+  position: absolute;
+  left: 30px;
+  top: 10px;
+}
+.sigma__index {
+  font-size: 15px;
+  position: absolute;
+  left: 21px;
+  top: 60px;
+}
+.sigma__lower-bound:before {
+  content: '=';
+}
+.sigma__lower-bound {
+  font-size: 15px;
+  position: absolute;
+  left: 27px;
+  top: 60px;
+}
+.sigma__map {
+  font-size: 15px;
+  position: absolute;
+  left: 50px;
+  top: 35px;
+}
+.sigma:before {
+  content: 'Σ';
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+.sigma__result {
+  font-size: 20px;
+  position: absolute;
+  left: 170px;
+  top: 33px;
+}
+.sigma__result:before {
+  content: '=';
+  font-size: 20px;
+  position: absolute;
+  left: -17px;
+  top: 0px;
+}
