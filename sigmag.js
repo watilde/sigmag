@@ -23,7 +23,7 @@ $.fn.sigma = function () {
 };
 
 $(document).ready(function () {
-	$('[data-role="sigma"]').each(function (){
+  $('[data-role="sigma"]').each(function (){
     $(this).sigma();
   });
 });
