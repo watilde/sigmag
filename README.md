@@ -12,7 +12,7 @@ Build with BEM style class
 </div>
 ```
 
-## How to use
+## Display calculation result
 Use `data-role="sigma"` or jQuery instance methods:
 ### data-role
 ```html
