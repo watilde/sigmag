@@ -2,18 +2,103 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>sigmag.js - Express a sigma with jQuery and BEM</title>
+<title>sigmag - Express a sigma with jQuery and BEM</title>
 <meta name="description" content="Write Suneo in HTML" />
 <link type="text/css" rel="stylesheet" href="sigmag.css">
 </head>
 <body>
-  <div class="sigma" data-role="sigma">
-    <span class="sigma__upper-bound">6</span>
-    <span class="sigma__map">Math.pow(i, 2)</span>
-    <span class="sigma__index">i</span>
-    <span class="sigma__lower-bound">3</span>
-  </div>
-  <script src="bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="sigmag.js"></script>
+<h1>sigmag</h1>
+<p>Express a sigma with jQuery and BEM</p>
+<h3>Playground sigmag</h3>
+<table>
+  <tr>
+    <td><p>Write inputs of the following like this</p></td>
+    <td><img src="sigmag.png" /></td>
+  </tr>
+</table>
+<table id="playground__inputs">
+  <tr>
+    <td>n</td>
+    <td>
+      <input id="playground__inputs__upper-bound" ype="number" value=6 />
+    </td>
+  </tr>
+  <tr>
+    <td>i</td>
+    <td>
+      <input id="playground__inputs__index" type="texr" value="i" />
+    </td>
+  </tr>
+  <tr>
+    <td>m</td>
+    <td>
+      <input id="playground__inputs__lower-bound" type="number" value=3 />
+    </td>
+  </tr>
+  <tr>
+    <td>ai</td>
+    <td>
+      <input id="playground__inputs__map" type="text" value="Math.pow(i, 2)" />
+    </td>
+  </tr>
+</table>
+<p>Then entered value is reflected</p>
+<div id="playground__sigma" class="sigma">
+  <span class="sigma__upper-bound">6</span>
+  <span class="sigma__map">Math.pow(i, 2)</span>
+  <span class="sigma__index">i</span>
+  <span class="sigma__lower-bound">3</span>
+</div>
+<h3>Express a sigma with data-role attibute</h3>
+<pre>
+&lt;div class="sigma" data-role="sigma"&gt;
+  &lt;span class="sigma__upper-bound"&gt;6&lt;/span&gt;
+  &lt;span class="sigma__map"&gt;Math.pow(i, 2)&lt;/span&gt;
+  &lt;span class="sigma__index"&gt;i&lt;/span&gt;
+  &lt;span class="sigma__lower-bound">3&lt;/span&gt;
+&lt;/div&gt;
+</pre>
+<div class="sigma" data-role="sigma">
+  <span class="sigma__upper-bound">6</span>
+  <span class="sigma__map">Math.pow(i, 2)</span>
+  <span class="sigma__index">i</span>
+  <span class="sigma__lower-bound">3</span>
+</div>
+
+<h3>Express a sigma with jQuery instance methods</h3>
+<pre>
+&lt;div id="target" class="sigma"&gt;
+  &lt;span class="sigma__upper-bound"&gt;6&lt;/span&gt;
+  &lt;span class="sigma__map"&gt;Math.pow(i, 2)&lt;/span&gt;
+  &lt;span class="sigma__index"&gt;i&lt;/span&gt;
+  &lt;span class="sigma__lower-bound">3&lt;/span&gt;
+&lt;/div&gt;
+&it;script&gt;
+$('#target').sigma();
+&it;/script&gt;
+</pre>
+<div id="target" class="sigma">
+  <span class="sigma__upper-bound">6</span>
+  <span class="sigma__map">Math.pow(i, 2)</span>
+  <span class="sigma__index">i</span>
+  <span class="sigma__lower-bound">3</span>
+</div>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="sigmag.js"></script>
+<script>
+$('#target').sigma();
+$('#playground__sigma').sigma();
+$('#playground__inputs').find('input').on('keyup keypress', function (){
+  var upper_bound = $('#playground__inputs__upper-bound').val();
+  var index = $('#playground__inputs__index').val();
+  var lower_bound = $('#playground__inputs__lower-bound').val();
+  var map = $('#playground__inputs__map').val();
+  $('#playground__sigma').children('.sigma__upper-bound').html(upper_bound);
+  $('#playground__sigma').children('.sigma__index').html(index);
+  $('#playground__sigma').children('.sigma__lower-bound').html(lower_bound);
+  $('#playground__sigma').children('.sigma__map').html(map);
+  $('#playground__sigma').sigma();
+});
+</script>
 </body>
 </html>
