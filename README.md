@@ -12,7 +12,7 @@ Build with BEM style class
 </div>
 ```
 
-## JS
+## How to use
 Use `data-role="sigma"` or jQuery instance methods:
 ### data-role
 ```html
