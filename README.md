@@ -13,7 +13,7 @@ Build with BEM style class
 ```
 
 ## JS
-Use `data-role="sigma" or jQuery instance methods:
+Use `data-role="sigma"` or jQuery instance methods:
 ### data-role
 ```html
 <div class="sigma" data-role="sigma">
